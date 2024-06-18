@@ -1,0 +1,26 @@
+node "Ticket Management Server" {
+  component "Ticket Management System"
+}
+
+node "Database Server" {
+  component "Database"
+}
+
+node "Ticket Counter 1" {
+  component "Ticket Counter Interface"
+}
+
+node "Ticket Counter 2" {
+  component "Ticket Counter Interface"
+}
+
+node "Ticket Counter N" {
+  component "Ticket Counter Interface"
+}
+
+actor "User" as User
+User -> "Ticket Counter Interface"
+
+"Ticket Counter Interface" -> "Ticket Management System"
+
+"Ticket Management System" -> "Database"

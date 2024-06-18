@@ -1,0 +1,41 @@
+User -> TicketCounter: Request to purchase ticket
+TicketCounter -> TicketManagementSystem: Check ticket availability
+TicketManagementSystem -> Database: Query seat availability
+Database -> TicketManagementSystem: Confirm seat availability
+TicketManagementSystem -> TicketCounter: Confirm ticket availability
+TicketCounter -> User: Request payment
+User -> TicketCounter: Make payment
+TicketCounter -> TicketManagementSystem: Register ticket purchase
+TicketManagementSystem -> Database: Update ticket data
+TicketManagementSystem -> TicketCounter: Confirm purchase
+TicketCounter -> User: Issue ticket
+
+
+User -> TicketCounter: Request to return ticket
+TicketCounter -> TicketManagementSystem: Check return eligibility
+TicketManagementSystem -> Database: Verify ticket data
+Database -> TicketManagementSystem: Confirm ticket data
+TicketManagementSystem -> TicketCounter: Confirm return eligibility
+TicketCounter -> User: Request ticket and return details
+User -> TicketCounter: Provide ticket and return details
+TicketCounter -> TicketManagementSystem: Register ticket return
+TicketManagementSystem -> Database: Update ticket data
+TicketManagementSystem -> TicketCounter: Confirm return
+TicketCounter -> User: Refund money
+
+
+
+User -> TicketCounter: Request to purchase season pass
+TicketCounter -> TicketManagementSystem: Check season pass availability
+TicketManagementSystem -> Database: Query season pass availability
+Database -> TicketManagementSystem: Confirm season pass availability
+TicketManagementSystem -> TicketCounter: Confirm season pass availability
+TicketCounter -> User: Request payment
+User -> TicketCounter: Make payment
+TicketCounter -> TicketManagementSystem: Register season pass purchase
+TicketManagementSystem -> Database: Update season pass data
+TicketManagementSystem -> TicketCounter: Confirm purchase
+TicketCounter -> User: Issue season pass
+
+
+
